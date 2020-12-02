@@ -1,8 +1,13 @@
 const modelUser = require('../../models/user')
 
-const addUserOnDB = async(user, validateUser) => {
+/**
+ * 
+ * @param {Object} user Contiene el Schema con los datos.
+ */
+
+const addUserOnDB = async(user) => {
     const User = new modelUser(user)
-    await User.save(validateUser)
+    return User.save()
 }
 
 module.exports = addUserOnDB
